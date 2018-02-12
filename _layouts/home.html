@@ -5,7 +5,8 @@ layout: default
 {% capture md %}
 # Blog Posts
 {% for post in site.posts %}
-- <span>{{ post.date | date_to_string }}</span> &raquo; [{{ post.title }}]({{ site.baseurl | default: site.github.url }}{{ post.url }})
+- <span>{{ post.date | date_to_string }}</span>  
+[{{ post.title }}]({{ site.github.url }}{{ post.url }})
 {% endfor %}
 {% endcapture %}
 
