@@ -3,3 +3,8 @@
 
 @import "{{ site.theme }}";
 
+.page-header>h1>a {
+    color: #fff;
+    text-decoration: none;
+}
+
