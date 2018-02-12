@@ -2,17 +2,17 @@
 layout: default
 ---
 
-{% capture md %}
-# Blog Posts
-{% for post in site.posts %}
-- <span>{{ post.date | date_to_string }}</span>  
-[{{ post.title }}]({{ site.github.url }}{{ post.url }})
-{% endfor %}
-{% endcapture %}
-
 {{ content }}
 
 <div id="posts">
-    {{ md | markdownify }}
+    {% for post in site.posts %}
+        <div class="post">
+            <header class="post-header">
+                <h1>{{ page.title }}</h1>
+                <p class="meta">{{ page.date | date_to_string }}</p>
+                <a href="{{ site.github.url }}{{ post.url }}">Read</a>
+            </header>
+        </div>
+    {% endfor %}
 </div>
 
