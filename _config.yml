@@ -17,10 +17,9 @@ title: kPherox GitHub Page
 email: admin@mail.kr-kp.com
 description: >- # this means to ignore newlines until "baseurl:"
     Homepage on GitHub
-#baseurl: "" # the subpath of your site, e.g. /blog
-#url: "http://kphero.me" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: kPherox
-github_username: kPherox
+
+twitter:
+    username: kPherox
 
 # Build settings
 markdown: kramdown
