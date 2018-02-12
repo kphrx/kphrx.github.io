@@ -3,11 +3,11 @@ layout: default
 ---
 
 {% capture header %}
-    ## {{ page.title }}
-    {{ page.date | date_to_string }} {: .meta}
+## {{ page.title }}
+{{ page.date | date_to_string }} {: .meta}
 {% endcapture %}
 
-<header>
+<header class="site-header">
     {{ header | markdownify }}
 </header>
 
