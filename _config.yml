@@ -21,32 +21,19 @@ description: >- # this means to ignore newlines until "baseurl:"
 twitter:
     username: kPherox
 
-jekyll-archives:
-    enabled:
-        - year
-        - month
-        - category
-        - tag
-    layout:
-        year: archive_year
-        month: archive_month
-        tag: archive_tags
-        category: archive_categories
-    permalinks:
-        year: '/:year/'
-        month: '/:year-:month/'
-        tag: '/tag/:name/'
-        category: '/category/:name/'
-
 # Build settings
 markdown: kramdown
+
 theme: jekyll-theme-cayman
+
 plugins:
     - jekyll-feed
     - jekyll-redirect-from
     - jekyll-seo-tag
     - jekyll-sitemap
-    - jekyll-archives
+
+whitelist:
+    - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
