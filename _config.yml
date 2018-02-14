@@ -16,10 +16,10 @@
 title: kPherox GitHub Page
 email: admin@mail.kr-kp.com
 description: >- # this means to ignore newlines until "baseurl:"
-    Homepage on GitHub
+  Homepage on GitHub
 
 twitter:
-    username: kPherox
+  username: kPherox
 
 # Build settings
 markdown: kramdown
@@ -27,13 +27,13 @@ markdown: kramdown
 theme: jekyll-theme-cayman
 
 plugins:
-    - jekyll-feed
-    - jekyll-redirect-from
-    - jekyll-seo-tag
-    - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 whitelist:
-    - jekyll-redirect-from
+  - jekyll-redirect-from
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
