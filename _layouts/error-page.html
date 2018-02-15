@@ -2,18 +2,29 @@
 layout: default
 ---
 
+<script>
+  var path = location.pathname;
+  var replacePath = " " + path;
+  var target = "/nowplayingtweet"
+  if (replacePath.indexOf(" " + target) !== -1) {
+    var reg = new RegExp(target, 'g');
+    var newPath = path.replace(reg , "/NowPlayingTweet");
+    location.pathname = newPath;
+  }
+</script>
+
 <style type="text/css" media="screen">
-  .error {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  .error>h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
+    .error {
+        margin: 10px auto;
+        max-width: 600px;
+        text-align: center;
+    }
+    .error>h1 {
+        margin: 30px 0;
+        font-size: 4em;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
 </style>
 
 <div class="error">
