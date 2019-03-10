@@ -12,21 +12,34 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 Jekyll also offers powerful support for code snippets:
 
-{% raw %}
-```liquid
-<ul id="products">
-  {% for product in products %}
-    <li>
-      <h2>{{ product.title }}</h2>
-      Only {{ product.price | format_as_money }}
-
-      <p>{{ product.description | prettyprint | truncate: 200  }}</p>
-
-    </li>
-  {% endfor %}
-</ul>
+```bash
+#!/bin/bash
+ 
+cd $ROOT_DIR
+DOT_FILES="lastpass weechat ssh Xauthority"
+for dotfile in $DOT_FILES; do conform_link "$DATA_DIR/$dotfile" ".$dotfile"; done
+ 
+# TODO: refactor with suffix variables (or common cron values)
+ 
+case "$PLATFORM" in
+    linux)
+        #conform_link "$CONF_DIR/shell/zshenv" ".zshenv"
+        crontab -l > $ROOT_DIR/tmp/crontab-conflict-arch
+        cd $ROOT_DIR/$CONF_DIR/cron
+        if [[ "$(diff ~/tmp/crontab-conflict-arch crontab-current-arch)" == ""
+            ]];
+            then # no difference with current backup
+                logger "$LOG_PREFIX: crontab live settings match stored "\
+                    "settings; no restore required"
+                rm ~/tmp/crontab-conflict-arch
+            else # current crontab settings in file do not match live settings
+                crontab $ROOT_DIR/$CONF_DIR/cron/crontab-current-arch
+                logger "$LOG_PREFIX: crontab stored settings conflict with "\
+                    "live settings; stored settings restored. "\
+                    "Previous settings recorded in ~/tmp/crontab-conflict-arch."
+        fi
+    ;;
 ```
-{% endraw %}
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
