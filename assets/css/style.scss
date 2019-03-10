@@ -27,12 +27,12 @@ h1.project-name>a {
 
 div.highlight pre {
     border: none;
-    background-color: $base3;
-    color: $base00;
+    background-color: $base2;
+    color: $base01;
     border-radius: unset !important;
 
 
-    &, .w {
+    .w {
         color: $base01;
     }
     .err {
