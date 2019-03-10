@@ -21,7 +21,7 @@ div.highlight pre {
     border: none;
     background-color: $base3;
     color: $base00;
-    border-radius: unset;
+    border-radius: unset !important;
 }
 
 pre.highlight {
