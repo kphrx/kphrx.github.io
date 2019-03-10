@@ -27,24 +27,30 @@ h1.project-name>a {
 
 div.highlight pre {
     border: none;
+    border-radius: unset !important;
+
     background-color: $base3;
     color: $base00;
     @media (prefers-color-scheme: dark) {
         background-color: $base03;
         color: $base0;
     }
-    border-radius: unset !important;
-
 
     .w {
         color: $base01;
+        @media (prefers-color-scheme: dark) {
+            color: $base1;
+        }
     }
     .err {
         color: $base03;
         background-color: $red;
     }
     .c, .cd, .cm, .c1, .cs {
-        color: $base00;
+        color: $base1;
+        @media (prefers-color-scheme: dark) {
+            color: $base01;
+        }
     }
     .cp {
         color: $yellow;
