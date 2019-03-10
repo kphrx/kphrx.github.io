@@ -3,8 +3,40 @@
 
 @import "{{ site.theme }}";
 
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+
 h1.project-name>a {
     color: #fff;
     text-decoration: none;
 }
 
+div.highlight {
+    background-color: $base3;
+}
+
+pre.highlight {
+    padding: 0 !important;
+    border: none;
+    color: $base00;
+
+    table.rouge-table td {
+        padding: 0;
+        border: none;
+
+        pre {
+            border: none;
+
+            &.lineno {
+                background-color: $base2;
+                color: $base1;
+            }
+        }
+    }
+}
