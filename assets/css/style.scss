@@ -27,8 +27,8 @@ h1.project-name>a {
 
 div.highlight pre {
     border: none;
-    background-color: $base2;
-    color: $base01;
+    background-color: $base3;
+    color: $base00;
     border-radius: unset !important;
 
 
@@ -117,8 +117,8 @@ pre.highlight {
         border: none;
 
         pre.lineno {
-            background-color: $base1;
-            color: $base0;
+            background-color: $base2;
+            color: $base1;
             text-align: right;
             padding-left: 1.3em;
             padding-right: .8em;
