@@ -29,6 +29,10 @@ div.highlight pre {
     border: none;
     background-color: $base3;
     color: $base00;
+    @media (prefers-color-scheme: dark) {
+        background-color: $base03;
+        color: $base0;
+    }
     border-radius: unset !important;
 
 
@@ -119,6 +123,10 @@ pre.highlight {
         pre.lineno {
             background-color: $base2;
             color: $base1;
+            @media (prefers-color-scheme: dark) {
+                background-color: $base02;
+                color: $base01;
+            }
             text-align: right;
             padding-left: 1.3em;
             padding-right: .8em;
