@@ -136,7 +136,7 @@ pre.highlight {
         pre.lineno {
             background-color: $base2;
             color: $base1;
-            @media (prefers-color-scheme: dark) {
+            @media (prefers-color-scheme: dark) or (color-index: 48) {
                 background-color: $base02;
                 color: $base01;
             }
