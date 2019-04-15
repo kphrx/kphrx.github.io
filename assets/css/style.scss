@@ -126,6 +126,13 @@ pre.highlight {
         padding: 0;
         border: none;
 
+        &:nth-of-type(even) {
+            padding-left: 5ex;
+        }
+
+        &.rouge-gutter.gl {
+            position: absolute;
+        }
         pre.lineno {
             background-color: $base2;
             color: $base1;
@@ -134,8 +141,9 @@ pre.highlight {
                 color: $base01;
             }
             text-align: right;
-            padding-left: 1.3em;
-            padding-right: .8em;
+            padding-left: 0;
+            padding-right: 1ex;
+            width: 5ex;
         }
     }
 }
