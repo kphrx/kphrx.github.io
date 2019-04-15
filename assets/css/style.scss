@@ -31,14 +31,14 @@ div.highlight pre {
 
     background-color: $base3;
     color: $base00;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: dark), not all and (color-index: 48) {
         background-color: $base03;
         color: $base0;
     }
 
     .w {
         color: $base01;
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: dark), not all and (color-index: 48) {
             color: $base1;
         }
     }
@@ -48,7 +48,7 @@ div.highlight pre {
     }
     .c, .cd, .cm, .c1, .cs {
         color: $base1;
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: dark), not all and (color-index: 48) {
             color: $base01;
         }
     }
@@ -136,7 +136,7 @@ pre.highlight {
         pre.lineno {
             background-color: $base2;
             color: $base1;
-            @media (prefers-color-scheme: dark), (color-index: 48) {
+            @media (prefers-color-scheme: dark), not all and (color-index: 48) {
                 background-color: $base02;
                 color: $base01;
             }
