@@ -1,0 +1,48 @@
+= kpherox.github.io
+
+== Project setup
+[source]
+----
+yarn install
+----
+
+=== Compiles and hot-reloads for development
+[source]
+----
+yarn serve
+----
+
+=== Compiles and minifies for production
+[source]
+----
+yarn build
+----
+
+=== Lints and fixes files
+[source]
+----
+yarn lint
+----
+
+== Web Server Config
+
+=== NGINX
+[source]
+----
+server {
+  listen 80;
+  server_name _;
+
+  root /path/to/dist;
+
+  error_page 404 /404.html;
+
+  location ^~ /404.html {
+    internal;
+  }
+
+  location ~ / {
+    try_files $uri $uri/index.html =404;
+  }
+}
+----
