@@ -4,6 +4,7 @@ const { join } = require('path')
 const { DefinePlugin } = require('webpack')
 const CompressionPlugin = require('compression-webpack-plugin')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const PostCSSNested = require('postcss-nested')
 /* eslint-enable */
 
 const distDir = join(__dirname, 'dist')
@@ -86,5 +87,15 @@ module.exports = {
         })
         return args
       })
+  },
+  css: {
+    loaderOptions: {
+      postcss: {
+        // options here will be passed to postcss-loader
+        plugins: [
+          PostCSSNested(),
+        ],
+      },
+    },
   },
 }
