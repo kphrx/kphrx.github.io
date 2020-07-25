@@ -17,7 +17,24 @@ import CollapseSoft from '@/components/Collapse/Soft.vue'
 @Component({
   components: {
     CollapseSoft,
-  }
+  },
+  head: {
+    noscript: {
+      id: 'NavigationBar',
+      style: [
+        {
+          type: 'text/css',
+          inner: `
+.navigation-bar .nav-items {
+  display: flex !important;
+}
+.navigation-bar .collapse-toggle {
+  display: none;
+}`,
+        },
+      ],
+    },
+  },
 })
 export default class NavigationBar extends Vue {
   @Prop({ type: String })
