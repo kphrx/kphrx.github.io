@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "graphql-request": "^2.0.0",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-head": "git+https://github.com/kPherox/vue-head.git#support-noscript",
