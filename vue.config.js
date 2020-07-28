@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const { name: pkgName } = require('./package.json')
 const { join } = require('path')
+const { DefinePlugin } = require('webpack')
 const CompressionPlugin = require('compression-webpack-plugin')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
 /* eslint-enable */
@@ -24,6 +26,11 @@ const html = (context) => {
 }
 
 const pluginOptions = {
+  define: {
+    'process.env': {
+      PROJECT_NAME: JSON.stringify(pkgName),
+    }
+  },
   compression: {
     test: /\.(js|css)(\?.*)?$/i,
     threshold: 8192,
@@ -53,9 +60,12 @@ const pluginOptions = {
   },
 }
 
-let webpackPlugins = []
+let webpackPlugins = [
+  new DefinePlugin(pluginOptions.define),
+]
 if (process.env.NODE_ENV === 'production') {
   webpackPlugins = [
+    ...webpackPlugins,
     new CompressionPlugin(pluginOptions.compression),
     new PrerenderSPAPlugin(pluginOptions.prerender),
   ]
