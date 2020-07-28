@@ -4,7 +4,7 @@
       <template v-slot:collapse>
         <router-link class="nav-item" :to="{ name: 'about' }">About</router-link>
         <router-link class="nav-item" :to="{ path: '/products' }">Products</router-link>
-        <router-link class="nav-item" :to="{ path: '/repositories' }">Repositories</router-link>
+        <router-link class="nav-item" :to="{ name: 'repos' }">Repositories</router-link>
       </template>
     </navigation-bar>
     <router-view id="view" />

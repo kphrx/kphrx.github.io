@@ -44,6 +44,7 @@ const pluginOptions = {
       '/404.html',
       '/',
       '/about',
+      '/repos',
     ],
     postProcess(context) {
       html(context)

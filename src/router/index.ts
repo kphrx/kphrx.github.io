@@ -17,6 +17,12 @@ const routes: Array<RouteConfig> = [
     component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
   },
   {
+    path: '/repos',
+    name: 'repos',
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "repos" */ '@/views/Repositories.vue')
+  },
+  {
     path: '/*',
     name: 'not-found',
     // which is lazy-loaded when the route is visited.
