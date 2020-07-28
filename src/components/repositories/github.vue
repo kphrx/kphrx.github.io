@@ -148,8 +148,6 @@ export default class RepositoriesGitHub extends Vue {
       , n = Math.round(t / 60)
       , r = Math.round(n / 60)
       , o = Math.round(r / 24)
-      , i = Math.round(o / 30)
-      , a = Math.round(i / 12)
 
     switch (true) {
       case e < 0 || t < 0:
@@ -168,14 +166,12 @@ export default class RepositoriesGitHub extends Vue {
         return "a day ago"
       case o < 30:
         return `${o} days ago`
-      case o < 45:
-        return "a month ago"
-      case i < 12:
-        return `${i} months ago`
-      case i < 18:
-        return "a year ago"
-      default:
-        return `${a} years ago`
+      default: {
+        const opts = { month: "short", day: "numeric" }
+        return d.getFullYear() < new Date().getFullYear()
+          ? d.toLocaleDateString("en-US", Object.assign({ year: 'numeric' }, opts))
+          : d.toLocaleDateString("en-US", opts)
+      }
     }
   }
 
