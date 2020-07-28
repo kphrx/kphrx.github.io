@@ -12,7 +12,7 @@
 import { PropType } from 'vue'
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { RawLocation } from 'vue-router'
-import CollapseSoft from './Collapse/Soft.vue'
+import CollapseSoft from '@/components/Collapse/Soft.vue'
 
 @Component({
   components: {

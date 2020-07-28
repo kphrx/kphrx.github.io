@@ -8,19 +8,19 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'root',
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue')
+    component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue')
   },
   {
     path: '/about',
     name: 'about',
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
   },
   {
     path: '/*',
     name: 'not-found',
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "404" */ '../views/NotFound.vue')
+    component: () => import(/* webpackChunkName: "404" */ '@/views/NotFound.vue')
   }
 ]
 
