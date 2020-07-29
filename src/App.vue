@@ -62,6 +62,8 @@ body {
   position: sticky;
   top: 0;
   text-align: left;
+  z-index: 1;
+  min-width: max-content;
 
   @media (min-width: 592px) {
     overflow-y: auto;
@@ -82,7 +84,6 @@ body {
     height: 100vh;
     > .nav-items {
       flex-direction: column;
-      width: 100%;
     }
   }
 }

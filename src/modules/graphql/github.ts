@@ -200,6 +200,7 @@ export default class GitHubGraphQL {
   async fetchAll() {
     const data: { viewer: User } = await this.client.request(`query {
       viewer {
+        login
         organizations(first: 100) {
           totalCount
           ...organizations

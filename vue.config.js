@@ -29,6 +29,7 @@ const html = (context) => {
 const pluginOptions = {
   define: {
     'process.env': {
+      GITHUB_ACCESS_TOKEN: JSON.stringify(process.env.GITHUB_ACCESS_TOKEN),
       PROJECT_NAME: JSON.stringify(pkgName),
     }
   },
