@@ -1,8 +1,9 @@
 <template>
   <div class="github-repos">
+    <h2>GitHub</h2>
     <div class="source-repos">
       <a class="collapse-button" @click="collapse.source ^= 1">
-        Source Repos
+        Source and Collaborate
         <span class="badge" v-text="sourceRepos.length"></span>
       </a>
       <collapse-hard :expanded="!!collapse.source && sourceRepos.length > 0">
@@ -23,7 +24,7 @@
     </div>
     <div class="orgs-repos">
       <a class="collapse-button" @click="collapse.orgs ^= 1">
-        Organizations Repos
+        Organizations
         <span class="badge" v-text="orgsRepos.length"></span>
       </a>
       <collapse-hard :expanded="!!collapse.orgs && orgsRepos.length > 0">
@@ -45,7 +46,7 @@
     </div>
     <div class="forked-repos">
       <a class="collapse-button" @click="collapse.forked ^= 1">
-        Forked Repos
+        Forked
         <span class="badge" v-text="forkedRepos.length"></span>
       </a>
       <collapse-hard :expanded="!!collapse.forked && forkedRepos.length > 0">
@@ -67,7 +68,7 @@
     </div>
     <div class="gists">
       <a class="collapse-button" @click="collapse.gists ^= 1">
-        GitHub Gists
+        Gists
         <span class="badge" v-text="gists.length"></span>
       </a>
       <collapse-hard :expanded="!!collapse.gists && gists.length > 0">
@@ -223,10 +224,15 @@ export default class RepositoriesGitHub extends Vue {
 
 <style scoped>
 .github-repos {
-  text-align: initial;
+  border: 1px dashed;
+  border-radius: .4rem;
+
+  > h2 {
+    margin: .5rem;
+  }
 
   > div {
-    margin: .5rem 0;
+    margin: .5rem;
     padding: .5rem;
     border: 1px solid var(--color);
     border-radius: .3rem;

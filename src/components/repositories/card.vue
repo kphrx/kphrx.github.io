@@ -81,6 +81,7 @@ export default class RepositoryCard extends Vue {
 
 <style scoped>
 .repo-card {
+  text-align: left;
   padding: .5rem;
   border: 1px solid var(--color);
   border-radius: .3rem;
