@@ -29,32 +29,27 @@ export interface Gist extends NodeInfo {
     language: Language;
   }[];
   url: string;
-  description: string;
+  description: string | null;
   stargazers: { totalCount?: number };
   forks: { totalCount?: number };
 }
 
-export interface Repository extends NodeInfo {
+export interface BaseRepository {
   nameWithOwner: string;
   url: string;
 }
 
-export interface OrganizationRepository extends Repository {
-  description: string;
+export interface Repository extends BaseRepository, NodeInfo {
+  description: string | null;
   stargazers: { totalCount?: number };
   forkCount: number;
-  parent: Repository;
+  parent: BaseRepository | null;
   primaryLanguage: Language;
 }
 
 export interface UserRepository extends Repository {
   name: string;
   owner: Owner;
-  description: string;
-  stargazers: { totalCount?: number };
-  forkCount: number;
-  parent: Repository;
-  primaryLanguage: Language;
 }
 
 interface Owner {
@@ -62,7 +57,7 @@ interface Owner {
 }
 
 interface Organization extends Owner {
-  repositories: RepositoryConnection<OrganizationRepository>;
+  repositories: RepositoryConnection<Repository>;
 }
 
 interface User extends Owner {
@@ -256,7 +251,7 @@ export default class GitHubGraphQL {
 
     if (!orgQueries && !orgsQuery && !reposQuery && !gistsQuery) return {}
 
-    const data: { viewer: Partial<User> & { [key: string]: RepositoryConnection<OrganizationRepository> } } = await this.client.request(`query {
+    const data: { viewer: Partial<User> & { [key: string]: RepositoryConnection<Repository> } } = await this.client.request(`query {
       viewer {
         ${orgQueries}
         ${orgsQuery}
