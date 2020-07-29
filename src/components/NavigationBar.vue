@@ -13,6 +13,7 @@ import { PropType } from 'vue'
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { RawLocation } from 'vue-router'
 import CollapseSoft from '@/components/Collapse/Soft.vue'
+import '@/utils/minify'
 
 @Component({
   components: {
@@ -24,13 +25,14 @@ import CollapseSoft from '@/components/Collapse/Soft.vue'
       style: [
         {
           type: 'text/css',
-          inner: `
-.navigation-bar .nav-items {
-  display: flex !important;
-}
-.navigation-bar .collapse-toggle {
-  display: none;
-}`,
+          inner:
+            `.navigation-bar .nav-items {
+              display: flex !important;
+            }
+
+            .navigation-bar .collapse-toggle {
+              display: none;
+            }`.minifyCSS()
         },
       ],
     },

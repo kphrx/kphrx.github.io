@@ -93,6 +93,7 @@ import { ClientError } from 'graphql-request'
 import GitHubGraphQL, { Gist, Repository, UserRepository } from '@/modules/graphql/github'
 import CollapseHard from '@/components/Collapse/Hard.vue'
 import RepoCard from '@/components/repositories/card.vue'
+import '@/utils/minify'
 
 interface UpdateAt {
   updated: Date;
@@ -122,7 +123,7 @@ interface UpdateAt {
 
             .github-repos .collapse-button .badge {
               display: none !important;
-            }`
+            }`.minifyCSS()
         }
       ],
     },
