@@ -35,6 +35,7 @@
             :name="repo.nameWithOwner"
             :desc="repo.description"
             :updated="repo.updated"
+            :forked="repo.parentRepository"
           />
         </div>
       </collapse-hard>
@@ -56,6 +57,7 @@
             :name="repo.owner.login == username ? repo.name : repo.nameWithOwner"
             :desc="repo.description"
             :updated="repo.updated"
+            :forked="repo.parentRepository"
           />
         </div>
       </collapse-hard>
@@ -77,6 +79,7 @@
             :name="gist.files[0].name"
             :desc="gist.description"
             :updated="gist.updated"
+            :forked="gist.isFork ? {} : null"
           />
         </div>
       </collapse-hard>
@@ -92,11 +95,15 @@ import { Component, Vue } from 'vue-property-decorator'
 import { ClientError } from 'graphql-request'
 import GitHubGraphQL, { Gist, Repository, UserRepository } from '@/modules/graphql/github'
 import CollapseHard from '@/components/Collapse/Hard.vue'
-import RepoCard from '@/components/repositories/card.vue'
+import RepoCard, { ParentRepository } from '@/components/repositories/card.vue'
 import '@/utils/minify'
 
 interface UpdateAt {
   updated: Date;
+}
+
+interface RepositoryExtend extends UpdateAt {
+  parentRepository?: ParentRepository;
 }
 
 @Component({
@@ -132,10 +139,15 @@ interface UpdateAt {
 export default class RepositoriesGitHub extends Vue {
   async created() {
     const client = new GitHubGraphQL(process.env.GITHUB_ACCESS_TOKEN)
-    const updated = <T extends Repository | Gist>(node: T) => {
-      const newValue: T & UpdateAt = {
+    const updated = <T extends Repository>(node: T) => {
+      const parentRepository = node.parent ? {
+        name: node.parent.nameWithOwner,
+        url: node.parent.url,
+      } : undefined
+      const newValue: T & RepositoryExtend = {
         ...node,
         updated: this.updatedAt(node),
+        parentRepository,
       }
       return newValue
     }
@@ -146,7 +158,13 @@ export default class RepositoriesGitHub extends Vue {
       this.repos.source = repos.filter(repo => !repo.isFork)
       this.repos.forked = repos.filter(repo => repo.isFork)
       this.repos.orgs = data.organizations.nodes.flatMap(org => org.repositories.nodes).map(updated)
-      this.repos.gists = data.gists.nodes.map(updated)
+      this.repos.gists = data.gists.nodes.map(gist => {
+        const newValue: Gist & UpdateAt = {
+          ...gist,
+          updated: this.updatedAt(gist),
+        }
+        return newValue
+      })
     } catch (e) {
       this.error = e
     }
@@ -165,9 +183,9 @@ export default class RepositoriesGitHub extends Vue {
   username = ''
 
   repos = {
-    source: [] as (UserRepository & UpdateAt)[],
-    orgs: [] as (Repository & UpdateAt)[],
-    forked: [] as (UserRepository & UpdateAt)[],
+    source: [] as (UserRepository & RepositoryExtend)[],
+    orgs: [] as (Repository & RepositoryExtend)[],
+    forked: [] as (UserRepository & RepositoryExtend)[],
     gists: [] as (Gist & UpdateAt)[],
   }
 
