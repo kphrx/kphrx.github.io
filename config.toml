@@ -22,4 +22,8 @@ highlight_code = true
 header_nav = [
     { name = "~kphrx", url = "/" },
     { name = "@blog", url = "/blog" },
+    { name = "@qiita", url = "https://qiita.com/kphrx" },
+    { name = "!keyoxide", url = "https://keyoxide.org/55A28362FE5705D3FF270136C04751C2BFA2F62D" },
+    { name = "$github", url = "https://github.com/kphrx" },
+    { name = "$gitlab", url = "https://gitlab.com/kphrx" },
 ]
