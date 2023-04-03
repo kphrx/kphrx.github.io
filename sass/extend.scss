@@ -1,0 +1,23 @@
+dt, dd {
+  margin: 0.4rem 0;
+}
+
+dt {
+  margin-top: 0.6rem;
+  font-weight: bold;
+
+  &::before {
+    content: '_:';
+  }
+
+  &::after {
+    content: '.';
+  }
+}
+
+dd {
+  margin-left: 40px;
+
+  & > ul,
+  & > ol { padding-left: 20px; }
+}
