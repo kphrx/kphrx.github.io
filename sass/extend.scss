@@ -1,3 +1,5 @@
+dl { margin: 0; }
+
 dt, dd {
   margin: 0.4rem 0;
 }
@@ -21,3 +23,5 @@ dd {
   & > ul,
   & > ol { padding-left: 20px; }
 }
+
+footer { margin: 16px 0; }
