@@ -1,3 +1,21 @@
+@media (prefers-color-scheme: dark) {
+  body[theme="auto"] {
+    filter: none;
+    img {
+      filter: none;
+
+      &.invertable { filter: invert(1); }
+    }
+    a, code, .footnote-definition:target {
+      filter: invert(1)
+    }
+  }
+  html, body {
+    background: black;
+    color: white;
+  }
+}
+
 dl { margin: 0; }
 
 dt, dd {
