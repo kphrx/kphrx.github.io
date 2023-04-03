@@ -29,4 +29,11 @@
       <li>twitter:<a rel="me noreferrer" target="_blank" href="https://twitter.com/kphrx">@kphrx</a>
       <li>twitter:<a rel="me noreferrer" target="_blank" href="https://twitter.com/kPherox">@kPherox</a>
     </ul>
+
+<dt id="support">support
+  <dd>
+    <ul>
+      <li><a rel="payment noreferrer" target="_blank" href="https://github.com/sponsors/kphrx">GitHub Sponsors</a>
+      <li><a rel="payment noreferrer" target="_blank" href="https://revolut.me/kphrx">Revolut</a>
+    </ul>
 </dl>
