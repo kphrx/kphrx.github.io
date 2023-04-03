@@ -9,7 +9,13 @@
       <dd>kPherox
       <dd>kphrx
     <dt>lang
-      <dd><code>ja-JP, en-JP;q=0.9, en-US;q=0.8, en;q=0.6</code>
+      <dd>
+        <ol>
+          <li>ja-JP
+          <li>en-JP;q=0.9
+          <li>en-US;q=0.8
+          <li>en;q=0.6
+        </ol>
     <dt>birth
       <dd>November 14th
     </dl>
