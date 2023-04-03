@@ -8,16 +8,13 @@
     <dt>handle
       <dd>kPherox
       <dd>kphrx
-    <dt>lang
-      <dd>
-        <ol>
-          <li>ja-JP
-          <li>en-JP;q=0.9
-          <li>en-US;q=0.8
-          <li>en;q=0.6
-        </ol>
     <dt>birth
       <dd>November 14th
+    <dt>favorites
+      <dd>Mizuki Makabe/真壁 瑞希 from THE iDOLM@STER Million Live!
+      <dd>Sazanami/漣 from 艦隊これくしょん
+    <dt>lang
+      <dd><pre>ja-JP, en-JP;q=0.9, en-US;q=0.8, en;q=0.6</pre>
     </dl>
 
 <dt id="contact">contact
