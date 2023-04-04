@@ -6,7 +6,7 @@
 
       &.invertable { filter: invert(1); }
     }
-    a, code, .footnote-definition:target {
+    code, a:link, .footnote-definition:target {
       filter: invert(1)
     }
   }
