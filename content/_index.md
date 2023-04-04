@@ -1,4 +1,5 @@
 +++
+title = "$ whoami kphrx"
 +++
 
 <dl>
@@ -14,7 +15,7 @@
       <dd>Mizuki Makabe/真壁 瑞希 from THE iDOLM@STER Million Live!
       <dd>Sazanami/漣 from 艦隊これくしょん
     <dt>lang
-      <dd><pre>ja-JP, en-JP;q=0.9, en-US;q=0.8, en;q=0.6</pre>
+      <dd><pre style="margin:0">ja-JP, en-JP;q=0.9, en-US;q=0.8, en;q=0.6</pre>
     </dl>
 
 <dt id="contact">contact

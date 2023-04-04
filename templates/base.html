@@ -1,34 +1,4 @@
-{% extends "no-style-please/templates/base.html" %}
-{% block metatags %}
-{% if title %}<meta name="title" content="{{ title }}">{% endif %}
-{% if author %}<meta name="author" content="{{ author }}">{% endif %}
-{% if description %}<meta name="description" content="{{ description }}">{% endif %}
-<meta name="generator" content="Zola v0.17.2">
-
-<meta property="og:type" content="website">
-<meta property="og:url" content="{{ url | safe }}">
-{% if title %}<meta property="og:site_name" content="{{ config.title }}">{% endif %}
-{% if title %}<meta property="og:title" content="{{ title }}">{% endif %}
-{% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
-{% if image %}<meta property="og:image" content="{{ image }}">{% endif %}
-
-<link rel="canonical" href="{{ url | safe }}">
-{% if image %}<link rel="shortcut icon" type="image/x-icon" href="{{ get_url(path=config.extra.logo, trailing_slash=false) }}">{% endif %}
-<script type="application/ld+json">
-    {
-        {% if description %}"description":"{{ description | safe }}",{% endif %}
-        "url":"{{ url | safe }}",
-        "@type":"WebSite",
-        {% if title %}"headline":"{{ title | safe }}",{% endif %}
-        {% if title %}"name":"{{ title | safe }}",{% endif %}
-        {% if author %}"author":{
-            "@type":"Person",
-            "name":"{{ author | safe }}"
-        },{% endif %}
-        "@context":"https://schema.org"
-    }
-</script>
-{% endblock metatags %}
+{% extends "theme-base.html" %}
 
 {% block css %}
 <link rel="stylesheet" href="{{ get_url(path='style.css', trailing_slash=false) | safe }}"/>
