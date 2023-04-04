@@ -38,8 +38,36 @@ dt {
 dd {
   margin-left: 40px;
 
-  & > ul,
-  & > ol { padding-left: 20px; }
+  > * {
+    margin: 0;
+  }
+
+  > p,
+  > pre {
+    &::before {
+      content: '_:value "';
+    }
+    &::after {
+      content: '"';
+    }
+  }
+
+  > ul {
+    list-style: none;
+    padding-left: 0;
+
+    > li::before {
+      content: '_:value <';
+    }
+
+    > li[data-type]::before {
+      content: '_:' attr(data-type) ' <';
+    }
+
+    > li::after {
+      content: '>'
+    }
+  }
 }
 
 footer { margin: 16px 0; }
