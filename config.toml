@@ -25,6 +25,7 @@ render_emoji = true
 # Put all your custom variables here
 header_nav = [
     { name = "~kphrx", url = "/" },
+    { name = "products/", url = "/products" },
     { name = "@blog", url = "/blog" },
     { name = "@qiita", url = "https://qiita.com/kphrx" },
     { name = "!keyoxide", url = "https://keyoxide.org/55A28362FE5705D3FF270136C04751C2BFA2F62D" },

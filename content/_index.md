@@ -1,5 +1,5 @@
 +++
-title = "$ whoami kphrx"
+title = "$ whoami"
 +++
 
 <dl>

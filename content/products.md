@@ -32,8 +32,8 @@ title = "Products"
 
 ### PHP Libraries
 - **LINE notification channels for Laravel** :: Add LINE Messaging API provider for Laravel.
-  - [Packagist][https://packagist.org/packages/kpherox/laravel-notification-line]
-  - [GitHub][https://github.com/kpherox/laravel-notification-line]
+  - [Packagist](https://packagist.org/packages/kpherox/laravel-notification-line)
+  - [GitHub](https://github.com/kpherox/laravel-notification-line)
 - **laravel-group-concat** :: Add `GROUP_CONCAT()` to `Query\Builder`.
-  - [Packagist][https://packagist.org/packages/kpherox/laravel-group-concat]
-  - [GitHub][https://github.com/kpherox/laravel-group-concat]
+  - [Packagist](https://packagist.org/packages/kpherox/laravel-group-concat)
+  - [GitHub](https://github.com/kpherox/laravel-group-concat)
