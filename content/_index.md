@@ -15,7 +15,7 @@ title = "$ whoami"
       <dd><p>Mizuki Makabe/真壁 瑞希 from THE iDOLM@STER Million Live!</p>
       <dd><p>Sazanami/漣 from 艦隊これくしょん</p>
     <dt>lang
-      <dd><pre>ja-JP, en-JP;q=0.9, en-US;q=0.8, en;q=0.6</pre>
+      <dd><pre>ja-JP, en-JP;q=0.8, en-US;q=0.6, en;q=0.5</pre>
     </dl>
 
 <dt id="contact">contact
@@ -38,7 +38,10 @@ title = "$ whoami"
 <dt id="support">support
   <dd>
     <ul>
+      <li><a rel="payment noreferrer" target="_blank" href="https://liberapay.com/kphrx">Liberapay</a></li>
       <li><a rel="payment noreferrer" target="_blank" href="https://github.com/sponsors/kphrx">GitHub Sponsors</a></li>
-      <li><a rel="payment noreferrer" target="_blank" href="https://revolut.me/kphrx">Revolut</a></li>
+      <li><a rel="payment noreferrer" target="_blank" href="https://ko-fi.com/kphrx">Ko-fi</a></li>
+      <li><a rel="payment noreferrer" target="_blank" href="https://paypal.me/kphrx">PayPal.Me</a></li>
+      <li><a rel="payment noreferrer" target="_blank" href="https://revolut.me/kphrx">Revolut Me</a></li>
     </ul>
 </dl>
