@@ -11,8 +11,14 @@ title = "Products"
 
 ### Userscript apps
 - **ZenzaWatch** :: Fork [segabito/ZenzaWatch](https://github.com/segabito/ZenzaWatch). some fix.
+  - Sub packages ("**MylistPocket**", "**ZenzaWatch HLS Support**")
   - [GitHub](https://github.com/kphrx/ZenzaWatch)
-  - Compared to upstream changlog on [GitHub wiki](https://github.com/kphrx/ZenzaWatch/wiki/%E4%B8%8A%E6%B5%81%E3%81%8B%E3%82%89%E3%81%AE%E5%A4%89%E6%9B%B4)
+  - Compared to upstream changlog on [GitHub wiki](https://github.com/kphrx/ZenzaWatch/wiki/CHANGELOG-of-ZenzaWatch%E2%80%90dev.user.js)
+
+### Custom actions for GitHub Actions
+- **Docker Buildx imagetools action** :: This action is creating a new image based on source images with Buildx.
+  - [GitHub](https://github.com/kphrx/docker-buildx-imagetools-action)
+  - "**Create OCI/Docker manifest list**" on [GitHub Marketplace](https://github.com/marketplace/actions/create-oci-docker-manifest-list)
 
 ### Swift Packages
 - **iTunesBridge** :: Scripting Bridge Library for iTunes.
