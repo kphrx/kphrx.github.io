@@ -16,9 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Zola
-        uses: taiki-e/install-action@v2
-        with:
-          tool: zola@0.17.2
+        uses: taiki-e/install-action@zola
 
       - name: Setup Pages
         id: pages
