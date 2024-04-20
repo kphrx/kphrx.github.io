@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://kphrx.github.io"
 
-title = "kpherox.dev"
+title = "kpherox[.]dev"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
