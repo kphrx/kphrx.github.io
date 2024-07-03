@@ -1,19 +1,23 @@
-@media (prefers-color-scheme: dark) {
-  body[theme="auto"] {
-    filter: none;
-    img {
-      filter: none;
+@mixin dark-appearance {
+  background: black;
+  color: white;
 
-      &.invertable { filter: invert(1); }
-    }
-    code, a:link, .footnote-definition:target {
-      filter: invert(1)
-    }
+  filter: none;
+  img {
+    filter: none;
+
+    &.invertable { filter: invert(1); }
   }
-  html, body {
-    background: black;
-    color: white;
+  code, a:link, .footnote-definition:target {
+    filter: invert(1)
   }
+}
+
+body[data-theme="dark"] { @include dark-appearance; }
+
+
+@media (prefers-color-scheme: dark) {
+  body[data-theme="auto"] { @include dark-appearance; }
 }
 
 dl { margin: 0; }

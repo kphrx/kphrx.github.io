@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8">
         <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
 
         {% if page.title %}
@@ -64,12 +63,6 @@
         {% if description %}<meta property="og:description" content="{{ description }}">{% endif %}
         {% if image %}<meta property="og:image" content="{{ image }}">{% endif %}
 
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="{{ url | safe }}">
-        {% if title %}<meta property="twitter:title" content="{{ title }}">{% endif %}
-        {% if description %}<meta property="twitter:description" content="{{ description }}">{% endif %}
-        {% if image %}<meta property="twitter:image" content="{{ image }}">{% endif %}
-
         <link rel="canonical" href="{{ url | safe }}">
         {% if image %}<link rel="shortcut icon" type="image/x-icon" href="{{ get_url(path=config.extra.logo, trailing_slash=false) }}">{% endif %}
         <script type="application/ld+json">
@@ -78,7 +71,7 @@
                 "url":"{{ url | safe }}",
                 "@type":"WebSite",
                 {% if title %}"headline":"{{ title | safe }}",{% endif %}
-                {% if title %}"name":"{{ config.title | default(value=title) | safe }}",{% endif %}
+                {% if title %}"name":"{{ title | safe }}",{% endif %}
                 {% if author %}"author":{
                     "@type":"Person",
                     "name":"{{ author | safe }}"
@@ -96,7 +89,7 @@
         <link rel="stylesheet" href="{{ get_url(path='style.css', trailing_slash=false) | safe }}"/>
         {% endblock css %}
     </head>
-    <body theme="auto">
+    <body data-theme="auto">
         <div class="w">
             <header>
                 {% if config.extra.header_nav %}
