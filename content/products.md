@@ -4,10 +4,16 @@ title = "Products"
 
 ## Maintained
 
-### Swift web apps
+### Web apps
+
 - **@handle and did:plc Tracker** :: History of handle name in AT Protocol from plc.directory
-  - [Hosted page](https://plc-handle-tracker.kpherox.dev)
+  - Implemented in Swift
+  - ~~[Hosted page](https://pht.kpherox.dev)~~
   - [GitHub](https://github.com/kphrx/plc-handle-tracker)
+- **Noxir** :: Nostr Relay in Elixir with Mnesia 
+  - Implemented in Elixir
+  - [Hosted page](https://noxir.kpherox.dev)
+  - [GitHub](https://github.com/kphrx/noxir)
 
 ### Userscript apps
 - **ZenzaWatch** :: Fork [segabito/ZenzaWatch](https://github.com/segabito/ZenzaWatch). some fix.
@@ -35,10 +41,12 @@ title = "Products"
 - **NicoDownloader** :: Niconico Live timeshift RTMP downloader.
   - [GitHub](https://github.com/kpherox/NicoDownloader)
 
-### PHP web apps
+### Web apps
 - **URL-Shortener** :: :shrug:
+  - Implemented in PHP
   - [GitHub](https://github.com/kpherox/URL-Shortener)
 - **JMA-Publish-Sharer** :: JMA's XML feed received with WebSub, and share/notify to social networking service.
+  - Implemented in PHP
   - [GitHub](https://github.com/kpherox/JMA-Publish-Sharer)
 
 ### PHP Libraries
