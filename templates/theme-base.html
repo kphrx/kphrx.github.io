@@ -28,7 +28,7 @@
 
 {% if page.extra.image or section.extra.image -%}
 {% set image_path = page.extra.image | default(value=section.extra.image) -%}
-{% elif config.base_url -%}
+{% elif config.extra.logo -%}
 {% set image_path = config.extra.logo -%}
 {% endif -%}
 
