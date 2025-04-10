@@ -1,16 +1,37 @@
+{% if page.title or section.title -%}
 {% set page_title = page.title | default(value=section.title) -%}
+{% endif -%}
+
 {% if config.title and page_title -%}
 {% set doc_title = page_title ~ " | " ~ config.title -%}
 {% elif config.title -%}
 {% set doc_title = config.title -%}
 {% endif -%}
 
-{% set url = page.permalink | default(value=section.permalink) | default(value=config.base_url) -%}
+{% if page.description or section.description -%}
+{% set description = page.description | default(value=section.description) -%}
+{% elif config.base_url -%}
+{% set description = config.description -%}
+{% endif -%}
 
-{% set author = page.extra.author | default(value=section.extra.author) | default(value=config.extra.author) -%}
-{% set description = page.description | default(value=section.description) | default(value=config.description) -%}
+{% if page.permalink or section.permalink -%}
+{% set url = page.permalink | default(value=section.permalink) -%}
+{% elif config.base_url -%}
+{% set url = config.base_url -%}
+{% endif -%}
 
-{% set image_path = page.extra.image | default(value=section.extra.image) | default(value=config.extra.logo) -%}
+{% if page.extra.author or section.extra.author -%}
+{% set author = page.extra.author | default(value=section.extra.author) -%}
+{% elif config.extra.author -%}
+{% set author = config.extra.author -%}
+{% endif -%}
+
+{% if page.extra.image or section.extra.image -%}
+{% set image_path = page.extra.image | default(value=section.extra.image) -%}
+{% elif config.base_url -%}
+{% set image_path = config.extra.logo -%}
+{% endif -%}
+
 {% if image_path -%}
 {% set image = get_url(path=image_path, trailing_slash=false) -%}
 {% endif -%}
@@ -21,8 +42,8 @@
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
 
-        {% if doc_title or config.title -%}
-        <title>{{ doc_title | default(value=config.title) }}</title>
+        {% if doc_title or page_title -%}
+        <title>{{ doc_title | default(value=page_title) }}</title>
         {% endif -%}
 
         {% block metatags -%}
