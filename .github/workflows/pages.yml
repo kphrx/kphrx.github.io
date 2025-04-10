@@ -15,15 +15,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Zola
+      - name: Install Zola
         uses: taiki-e/install-action@zola
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Setup Themes
+      - name: Setup Zola
         run: |
+          echo "ZOLA_VERSION=$(zola --version)" >> "$GITHUB_ENV"
           chmod +x setup-themes.sh
           ./setup-themes.sh
 
