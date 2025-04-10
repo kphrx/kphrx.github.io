@@ -67,7 +67,7 @@
             {% if image -%}
             "image":"{{ image | safe }}",
             {% endif -%}
-            {% if author- %}
+            {% if author -%}
             "author":{
                 "@type":"Person",
                 "name":"{{ author | safe }}"
@@ -93,9 +93,9 @@
             <header>
                 {% if config.extra.header_nav -%}
                 <nav>
-                    {% for nav_item in config.extra.header_nav %}
+                    {% for nav_item in config.extra.header_nav -%}
                     <a href="{{ nav_item.url | safe }}">{{ nav_item.name }}</a>
-                    {% endfor %}
+                    {%- endfor %}
                 </nav>
                 {% endif -%}
 
