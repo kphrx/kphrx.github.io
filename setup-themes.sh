@@ -1,3 +1,3 @@
 #!/bin/sh
 
-git clone https://gitlab.com/4bcx/no-style-please.git themes/no-style-please
+git clone https://git.sr.ht/~gumxcc/zola-no-style-please themes/no-style-please
