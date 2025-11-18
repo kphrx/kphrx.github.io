@@ -54,7 +54,7 @@ dd {
   }
 
   > code {
-    background-color: transparent;
+    filter: unset;
   }
 
   &:has(> span, > code) {
