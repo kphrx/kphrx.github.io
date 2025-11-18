@@ -42,41 +42,40 @@ dt {
   }
 
   &::after {
-    content: '.';
+    content: ' .';
   }
 }
 
 dd {
   margin-left: 40px;
 
+  &:has(> span, > code, > a) {
+    &::before {
+      content: '_:value ';
+    }
+  }
+
   > * {
     margin: 0;
   }
 
-  > p,
-  > pre {
-    &::before {
-      content: '_:value "';
-    }
-    &::after {
+  > code {
+    background-color: transparent;
+  }
+
+  > span,
+  > code {
+    &::before, &::after {
       content: '"';
     }
   }
 
-  > ul {
-    list-style: none;
-    padding-left: 0;
-
-    > li::before {
-      content: '_:value <';
+  > a {
+    &::before {
+      content: '<';
     }
-
-    > li[data-type]::before {
-      content: '_:' attr(data-type) ' <';
-    }
-
-    > li::after {
-      content: '>'
+    &::after {
+      content: '>';
     }
   }
 }
